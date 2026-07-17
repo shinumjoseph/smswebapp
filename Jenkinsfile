@@ -42,6 +42,12 @@ pipeline {
                 }
             }
         }
+
+        stage('Deploy to IIS') {
+            steps {
+                powershell '.\\deploy.ps1'
+            }
+        }
     }
 
     post {
